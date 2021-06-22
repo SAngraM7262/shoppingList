@@ -1,0 +1,66 @@
+*{
+    margin : 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: azure;
+}
+
+.basket{
+    height: 90vh;
+    width: 90vw;
+    margin: auto;
+    margin-top: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.596);
+    padding: 15px;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    overflow: scroll;
+}
+
+.basket::-webkit-scrollbar {
+    width: 0px;
+  }
+
+
+
+hr{
+    width: 85%;
+    margin: 0px auto;
+    border: 1px solid;
+    border-radius: 80%;
+    margin-bottom: 10px;
+}
+.title{
+    text-align: center;
+    margin: 7px;
+    font-weight: 100;
+}
+
+.info{
+    font-size: 1em;
+    
+}
+
+.list{
+    list-style: none;
+}
+.list li{
+    margin: 10px;
+    
+}
+.mdc-list-item__text{
+    font-size: 1.2em;
+    font-weight: bolder;
+    text-transform: capitalize;
+    margin-top: 7px;
+}
+.done-true{
+    color: forestgreen;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+

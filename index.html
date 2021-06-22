@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="shoppingApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="indexStyle.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+</head>
+<body ng-controller = "myCtrl as list">
+    <div class="basket">
+        <div class="header">
+            <h2 class="title"> My Shopping List </h2>
+            <hr>
+            <span class="info">
+                {{list.remaining()}} out of {{list.items.length}} are remaining.. 
+            </span>
+            
+        </div>
+        <div class="body">
+            <ul class="list mdc-list">  
+                <li ng-repeat = "item in list.items" class="mdc-list-item">
+                    <div class="mdc-form-field">
+                        <div class="mdc-checkbox">
+                          <input type="checkbox"
+                                 class="mdc-checkbox__native-control"
+                                 id="checkbox-1" ng-model = "item.done"/>
+                          <div class="mdc-checkbox__background">
+                            <svg class="mdc-checkbox__checkmark"
+                                 viewBox="0 0 24 24">
+                              <path class="mdc-checkbox__checkmark-path"
+                                    fill="none"
+                                    d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                            </svg>
+                            <div class="mdc-checkbox__mixedmark"></div>
+                          </div>
+                          <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        <label class="done-{{item.done}} mdc-list-item__text"> {{item.text}} </label>
+                      </div>
+                </li>
+            </ul>
+
+            
+            
+        </div>
+        
+        
+        
+
+        
+    </div>
+<div class="btnContainer">
+  <button class="mdc-fab mdc-fab--extended addBtn" ng-click = "list.addNew()">
+    <div class="mdc-fab__ripple"></div>
+    <span class="material-icons mdc-fab__icon">add</span>
+    <span class="mdc-fab__label">Add New</span>
+</button>
+</div>
+    
+
+    
+    
+</body>
+</html>
